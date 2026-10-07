@@ -1,0 +1,43 @@
+{
+  "name": "anti-detect-studio",
+  "version": "1.0.0",
+  "description": "One Browser. Unlimited Isolated Profiles.",
+  "main": "./out/main/index.js",
+  "author": "Anti-Detect Studio",
+  "license": "MIT",
+  "homepage": "https://github.com/anti-detect-studio",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "start": "electron-vite preview",
+    "build:unpack": "npm run build && electron-builder --dir",
+    "build:win": "npm run build && electron-builder --win --config",
+    "build:mac": "npm run build && electron-builder --mac --config",
+    "build:linux": "npm run build && electron-builder --linux --config",
+    "typecheck:node": "tsc --noEmit -p tsconfig.node.json",
+    "typecheck:web": "tsc --noEmit -p tsconfig.web.json",
+    "typecheck": "npm run typecheck:node && npm run typecheck:web"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@electron-toolkit/preload": "^3.0.1",
+    "@electron-toolkit/utils": "^3.0.0",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.0",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@types/uuid": "^10.0.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "electron": "^31.4.0",
+    "electron-builder": "^24.13.3",
+    "electron-vite": "^2.3.0",
+    "lucide-react": "^0.441.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.5.4",
+    "zustand": "^4.5.5"
+  }
+}

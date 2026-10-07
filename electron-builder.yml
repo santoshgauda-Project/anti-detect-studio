@@ -1,0 +1,46 @@
+appId: com.antidetect.studio
+productName: Anti-Detect Studio
+directories:
+  buildResources: build
+  output: dist
+files:
+  - '!**/.vscode/*'
+  - '!src/*'
+  - '!electron.vite.config.*'
+  - '!{.eslintignore,.eslintrc.cjs,.prettierignore,.prettierrc.yaml,dev-app-update.yml,CHANGELOG.md,README.md}'
+  - '!{tsconfig.json,tsconfig.node.json,tsconfig.web.json}'
+win:
+  executableName: anti-detect-studio
+  signAndEditExecutable: false
+  target:
+    - target: nsis
+      arch:
+        - x64
+    - target: portable
+      arch:
+        - x64
+nsis:
+  artifactName: '${name}-${version}-setup.${ext}'
+  shortcutName: Anti-Detect Studio
+  uninstallDisplayName: Anti-Detect Studio
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  deleteAppDataOnUninstall: false
+mac:
+  extendInfo:
+    - NSDocumentsFolderUsageDescription: Application needs access to documents.
+  notarize: false
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+linux:
+  target:
+    - target: AppImage
+      arch:
+        - x64
+  maintainer: antidetectstudio
+  category: Network
